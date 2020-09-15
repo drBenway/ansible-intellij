@@ -1,9 +1,11 @@
 ---
-- name: Install needed dependancies
-  action: "{{ ansible_pkg_mgr }} state=present name={{ item }}"
-  with_items:
-    - tar
-    - unzip
+- name: Install packages using apt
+  apt:
+    name: 
+        - tar
+        - unzip
+    state: present
+    update_cache: no
   tags: ["packages","intellij"]
 
 - name: Find latest version
