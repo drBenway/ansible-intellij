@@ -49,6 +49,10 @@
 - name: Ensure intellij is configured
   template: src=idea.properties.j2 dest={{intellij_install_dir}}/{{intellij_folder_name}}/bin/idea.properties
   tags: ["configuration","intellij"]
+  
+- name: Rename folder to IntelliJ
+  command: mv {{intellij_install_dir}}/{{intellij_folder_name}} {{intellij_install_dir}}/IntelliJ
+  tags: ["configuration","intellij"]
 
 - name: Ensure intellij bin exist
   template: src=intellij.j2 dest=/usr/bin/intellij mode=755
