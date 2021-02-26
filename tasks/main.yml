@@ -1,4 +1,8 @@
 ---
+- name: Remove IntelliJ from target folder if it exists
+  command: rm -r {{intellij_install_dir}}/IntelliJ
+  tags: ["configuration","intellij"]
+
 - name: Install packages using apt
   apt:
     name: 
