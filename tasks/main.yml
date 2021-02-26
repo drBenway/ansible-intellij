@@ -2,7 +2,7 @@
 - name: Remove IntelliJ from target folder if it exists
   file:
     state: absent
-    path: "{{intellij_install_dir}}/IntelliJ"
+    path: "/opt/IntelliJ"
 
 
 - name: Install packages using apt
